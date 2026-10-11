@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dinara Anindita — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Pacifico&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAD6E1;--card:#fff;--ink:#4F2B1F;--mute:#7b5f59;--acc:#FAD6E1;--dark:#4F2B1F;--light:#F0EEF3;--acc2:#F0EEF3;--line:#ecdfe6;--grad:linear-gradient(135deg,#FAD6E1,#F0EEF3)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+h2,h3,.logo{font-family:'Playfair Display',serif;line-height:1.25}
+a{color:inherit;text-decoration:none}
+section{padding:70px 6%;max-width:1100px;margin:auto}
+.tag{color:var(--dark);font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+h2{font-size:2rem;margin:6px 0 30px;color:var(--dark)}
+nav{position:sticky;top:16px;z-index:10;max-width:1200px;margin:16px auto 0;width:92%;background:#fff;border-radius:50px;box-shadow:0 8px 28px rgba(79,43,31,.12);display:flex;justify-content:space-between;align-items:center;padding:12px 26px}
+.logo{font-size:1.4rem;color:var(--dark);font-weight:500}
+.menu{display:flex;gap:6px;align-items:center;list-style:none}
+.ni{display:flex;align-items:center;gap:7px;padding:10px 14px;border-radius:30px;color:var(--dark);font-size:.8rem;font-weight:500;transition:.25s}
+.ni svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ni span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .3s}
+.ni.act{background:var(--acc2)}.ni.act span{max-width:110px}
+.ni:hover{background:var(--acc2)}
+.lang{border:1px solid var(--dark);background:none;border-radius:20px;padding:4px 12px;font:500 .76rem 'DM Sans';color:var(--dark);cursor:pointer;margin-left:6px}
+#home{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;min-height:82vh}
+.lab{display:flex;align-items:center;gap:14px;color:var(--dark);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700}
+.lab:before{content:'';width:50px;height:2px;background:var(--dark)}
+#home h1{font:400 5rem/1.05 'Pacifico',cursive;margin:22px 0 18px}
+#home h1 b{display:block;font-weight:400;color:var(--dark)}#home h1 em{display:block;font-style:normal;color:var(--light);margin-left:12px}
+.sub{font:italic 1.4rem 'Playfair Display',serif;color:var(--dark);margin-bottom:26px}
+#home p.d{color:var(--mute);max-width:470px}
+.btns{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{padding:14px 30px;border-radius:40px;font-size:.88rem;font-weight:700;border:2px solid var(--dark);color:var(--dark);transition:.25s}
+.btn.p{background:var(--grad);color:var(--dark);border-color:rgba(79,43,31,.35);box-shadow:0 8px 20px rgba(79,43,31,.12)}.btn:hover{transform:translateY(-3px)}
+.photo{position:relative;aspect-ratio:3/4;max-width:380px;justify-self:center;width:100%;border-radius:26px;background:var(--grad);overflow:hidden;display:grid;place-items:center;font:400 5rem 'Pacifico';color:#fff;box-shadow:0 22px 44px rgba(79,43,31,.2)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cap{position:absolute;left:0;right:0;bottom:0;padding:70px 26px 24px;color:#fff;font-family:'DM Sans';background:linear-gradient(transparent,rgba(60,20,40,.55));backdrop-filter:blur(2px);-webkit-mask:linear-gradient(transparent,#000 45%);mask:linear-gradient(transparent,#000 45%)}
+.cap b{display:block;font-size:1.05rem}.cap small{display:block;font-size:.85rem;margin:2px 0 10px}.cap span{font-size:.85rem;font-weight:500}
+.quote{font:italic 1.3rem 'Playfair Display',serif;border-left:3px solid var(--dark);padding-left:18px;margin-bottom:22px;color:var(--dark)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 26px rgba(79,43,31,.12)}
+.card h3{font-size:1.05rem;margin:0 0 4px;color:var(--dark)}
+.card h3 + img{margin-top:12px}
+.card img{width:100%;display:block;border-radius:14px;object-fit:cover;aspect-ratio:16/10;margin:10px 0 14px;background:#f8f3f4}
+.lbl{color:var(--dark);font-size:.74rem;letter-spacing:1px;text-transform:uppercase;font-weight:700}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.tl{border-left:2px solid var(--line);padding-left:22px;display:grid;gap:22px}
+.tl div{position:relative}.tl div:before{content:'';position:absolute;left:-29px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--dark)}
+.tl b{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--dark)}.tl small{display:block;color:var(--dark);font-weight:700}
+.bar{margin-bottom:16px;font-size:.9rem}.bar div{display:flex;justify-content:space-between}
+.bar i{display:block;height:8px;border-radius:8px;background:rgba(79,43,31,.12);margin-top:5px;overflow:hidden;border:1px solid rgba(79,43,31,.08)}
+.bar i b{display:block;height:100%;width:0;background:linear-gradient(135deg,#FAD6E1,#F0EEF3);border-radius:8px;transition:width 1.2s ease}
+.cert{display:flex;gap:16px;align-items:flex-start}.cert .n{font:600 1.6rem 'Playfair Display',serif;color:var(--dark)}
+.thumb{height:110px;border-radius:14px;margin-bottom:14px;background:linear-gradient(135deg,var(--acc2),#ffeef3);display:grid;place-items:center;font-size:2.2rem}
+.card p{font-size:.86rem;color:var(--mute);margin:8px 0}
+.link{color:var(--dark);font-weight:700;font-size:.86rem}
+#contact{text-align:center}#contact p{max-width:520px;margin:0 auto 24px;color:var(--mute)}
+#contact .btns{justify-content:center}
+footer{text-align:center;padding:26px;font-size:.8rem;color:var(--mute);border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.on{opacity:1;transform:none}
+section#projects .grid,
+section#portfolio .grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media(max-width:800px){
+nav{padding:10px 14px;width:94%}.logo{display:none}.menu{width:100%;justify-content:space-between;gap:0}.ni{padding:9px 10px}.ni.act span{max-width:0}.lang{margin:0;padding:4px 9px}
+#home,.about-grid{grid-template-columns:1fr}#home h1{font-size:3.4rem}.photo{order:-1;max-width:300px}
+.grid{grid-template-columns:1fr!important}
+section#projects .grid,
+section#portfolio .grid{grid-template-columns:1fr!important}
+}
+
+/* Certificate Click Modal */
+.cert-card{cursor:pointer;position:relative;transition:.25s}.cert-card:hover{background:var(--acc2)}.cert-card::after{content:'Click to view';position:absolute;bottom:8px;right:8px;font-size:.7rem;color:var(--dark);font-weight:700;opacity:0;transition:.25s}.cert-card:hover::after{opacity:1}
+
+/* Modal Styles */
+.img-modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);opacity:0;transition:opacity .25s}.img-modal.show{display:flex;justify-content:center;align-items:center;opacity:1}.modal-content{position:relative;max-width:calc(100vw - 80px);width:auto;max-height:calc(100vh - 80px);border-radius:20px;overflow:auto;background:#fff;box-shadow:0 20px 60px rgba(79,43,31,.18)}.modal-content img{display:block;width:auto;max-width:100%;height:auto;max-height:100%;object-fit:contain}.close-modal{position:absolute;top:12px;right:16px;font-size:1.8rem;font-weight:bold;color:var(--dark);cursor:pointer;z-index:10;background:rgba(255,255,255,.9);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:.2s}.close-modal:hover{background:#fff;transform:scale(1.1)}
+
+/* Project Hover Preview */
+.project-card{position:relative}.hover-preview{display:none}
+
+/* Soft Skills Cards Improvement */
+.soft-skill-card{border:2px solid var(--line);transition:all .25s}.soft-skill-card:hover{background:var(--acc2);border-color:var(--dark);transform:translateY(-3px)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 9 12 4 2 9l10 5 10-5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7 5-3 5 3-1.5-7"/></symbol>
+  <symbol id="i-case" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 13h18"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+</svg>
+
+<nav>
+  <a href="#home" class="logo">Dinara.</a>
+  <ul class="menu" id="menu">
+    <li><a href="#home" class="ni act" title="Home"><svg><use href="#i-home"/></svg><span class="t" data-en="Home">Home</span></a></li>
+    <li><a href="#about" class="ni" title="About Me"><svg><use href="#i-info"/></svg><span class="t" data-en="About Me">Tentang Aku</span></a></li>
+    <li><a href="#skills" class="ni" title="Skills"><svg><use href="#i-star"/></svg><span class="t" data-en="Skills">Keahlian</span></a></li>
+    <li><a href="#achievement" class="ni" title="Achievement"><svg><use href="#i-award"/></svg><span class="t" data-en="Achievement">Prestasi</span></a></li>
+    <li><a href="#projects" class="ni" title="Projects"><svg><use href="#i-case"/></svg><span class="t" data-en="Projects">Proyek</span></a></li>
+    <li><a href="#contact" class="ni" title="Contact"><svg><use href="#i-mail"/></svg><span class="t" data-en="Contact">Kontak</span></a></li>
+    <li><button class="lang" id="lang">ID | EN</button></li>
+  </ul>
+</nav>
+
+<section id="home">
+  <div class="rv">
+    <div class="lab">Personal Branding</div>
+    <h1><b>Dinara</b><em>Anindita</em></h1>
+    <p class="sub">Exploring Creativity with Simplicity</p>
+    <p class="d t" data-en="Hi, I'm Dinara, a vocational high school student majoring in SIJA (Information Systems, Networks, and Applications) at SMKN 7 Semarang. I love trying new things and turning my ideas into work that is simple but still interesting.">Halo, aku Dinara, siswa SMKN 7 Semarang jurusan SIJA. Aku suka mencoba hal-hal baru dan senang menuangkan ide lewat karya yang sederhana tapi tetap menarik.</p>
+    <div class="btns">
+      <a href="#projects" class="btn p"><span class="t" data-en="View Portfolio">Lihat Portfolio</span> →</a>
+      <a href="#about" class="btn t" data-en="About Me">Tentang Aku</a>
+    </div>
+  </div>
+  <div class="photo rv">D
+    <img src="../images/profil_dinara.jpg" alt="Dinara Anindita" onerror="this.style.display='none'">
+    <div class="cap"><b>Dinara Anindita</b><small>SMKN 7 Semarang, Indonesia</small><span>Creative</span></div>
+  </div>
+</section>
+
+<section id="about">
+  <span class="tag">About Me</span>
+  <h2 class="t" data-en="Getting to know me">Mengenal aku lebih dekat</h2>
+  <div class="about-grid">
+    <div class="rv">
+      <p class="quote t" data-en="I believe even simple things can become meaningful work.">Mencoba, mencipta, lalu menemukan caraku sendiri.</p>
+      <p class="t" data-en="I'm the third of three siblings. I'm active, easy to talk to, and I enjoy trying new things, especially in digital design, UI/UX, and technology.">Aku anak ketiga dari tiga bersaudara. Orangnya aktif, mudah ngobrol, dan senang mencoba hal baru, terutama di desain digital, UI/UX, dan teknologi.</p>
+      <br><span class="lbl t" data-en="My strengths">Kelebihan diri</span>
+      <ul style="margin:8px 0 0 18px;font-size:.92rem">
+        <li class="t" data-en="I communicate easily and get along with new people">Mudah berkomunikasi dan berkenalan dengan orang baru</li>
+        <li class="t" data-en="I can manage my time quite well">Bisa mengatur waktu dengan cukup baik</li>
+        <li class="t" data-en="I'm always willing to learn new things">Mau terus belajar hal baru</li>
+        <li class="t" data-en="I enjoy creating designs, especially in Canva and Figma">Suka membuat desain, terutama di Canva dan Figma</li>
+      </ul>
+    </div>
+    <div class="grid rv" style="grid-template-columns:1fr 1fr">
+      <div class="card"><span class="lbl t" data-en="Dream job">Cita-cita</span><h3>UI/UX Designer</h3></div>
+      <div class="card"><span class="lbl t" data-en="Location">Lokasi</span><h3>Semarang</h3><small>Jawa Tengah</small></div>
+      <div class="card"><span class="lbl t" data-en="Hobbies">Hobi</span><p class="t" data-en="Listening to music, watching movies, and enjoying nature to find new inspiration">Mendengarkan musik, menonton film, dan menikmati alam sambil mencari inspirasi</p></div>
+      <div class="card"><span class="lbl t" data-en="Interests">Minat</span><p class="t" data-en="Digital Design, UI/UX Design, Web Design, and technology and IoT">Digital Design, UI/UX Design, Web Design, serta teknologi dan IoT</p></div>
+      <div class="card" style="grid-column:1/-1"><span class="lbl t" data-en="Vision">Visi</span><p class="t" data-en="To become a UI/UX Designer who can turn creative ideas into designs that are attractive, easy to use, and useful">Menjadi UI/UX Designer yang bisa mengubah ide kreatif menjadi desain yang menarik, mudah dipakai, dan bermanfaat</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <span class="tag">Skills</span>
+  <h2 class="t" data-en="Skills that keep growing">Kemampuan yang terus berkembang</h2>
+  <div class="about-grid">
+    <div class="rv">
+      <span class="lbl t" data-en="Main skills">Keahlian utama</span><br><br>
+      <div class="bar"><div><span>Canva Design</span><span>85%</span></div><i><b data-w="85"></b></i></div>
+      <div class="bar"><div><span>Microsoft Office</span><span>80%</span></div><i><b data-w="80"></b></i></div>
+      <div class="bar"><div><span>UI/UX Design</span><span>75%</span></div><i><b data-w="75"></b></i></div>
+      <div class="bar"><div><span>HTML &amp; CSS</span><span>65%</span></div><i><b data-w="65"></b></i></div>
+      <div class="bar"><div><span>Networking</span><span>60%</span></div><i><b data-w="60"></b></i></div>
+    </div>
+    <div class="rv">
+      <span class="lbl">Soft Skills</span><br><br>
+      <div class="grid" style="grid-template-columns:repeat(2,1fr);gap:14px">
+        <div class="card soft-skill-card"><h3 class="t" data-en="Creative">Kreatif</h3><p class="t" data-en="I like finding new ways to share my ideas.">Suka mencari cara baru untuk menyampaikan ide.</p></div>
+        <div class="card soft-skill-card"><h3 class="t" data-en="Communicative">Komunikatif</h3><p class="t" data-en="I can explain my ideas clearly and get along easily with new people.">Bisa menjelaskan ide dengan jelas dan mudah akrab dengan orang baru.</p></div>
+        <div class="card soft-skill-card"><h3 class="t" data-en="Responsible">Bertanggung jawab</h3><p class="t" data-en="I try my best to finish my tasks well.">Berusaha menyelesaikan tugas dengan baik.</p></div>
+        <div class="card soft-skill-card"><h3 class="t" data-en="Adaptable">Adaptif</h3><p class="t" data-en="I adjust quickly to new situations.">Cepat menyesuaikan diri dengan situasi baru.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="achievement">
+  <span class="tag">Achievement</span>
+  <h2 class="t" data-en="Certificates">Sertifikat</h2>
+  <div class="grid">
+    <div class="card cert rv cert-card" data-image="../images/cert-01.jpg" role="button" tabindex="0" title="Click to view"><span class="n">01</span><div><h3 class="t" data-en="Paham AI Program (Certificate of Competence)">Program Paham AI (Sertifikat Kompetensi)</h3><small>Senopati Academy · Polri · Kemendikdasmen</small></div></div>
+    <div class="card cert rv cert-card" data-image="../images/cert-03.png" role="button" tabindex="0" title="Click to view"><span class="n">02</span><div><h3>Java Fundamentals</h3><small>Oracle Academy</small></div></div>
+    <div class="card cert rv cert-card" data-image="../images/cert-04.png" role="button" tabindex="0" title="Click to view"><span class="n">03</span><div><h3>IT Essentials: PC Hardware and Software</h3><small>Cisco Networking Academy</small></div></div>
+  </div>
+</section>
+
+<section id="portfolio">
+
+  <span class="tag">Projects</span>
+
+  <h2 class="t" data-en="Works &amp; Projects">
+    Karya &amp; Proyek
+  </h2>
+
+  <div class="grid">
+
+    <!-- PROJECT 1 -->
+    <div class="card">
+
+      <h3 class="t" data-en="Kota Semarang Website">
+        Website Kota Semarang
+      </h3>
+
+      <img src="../images/project-01.jpg" alt="Kota Semarang Website">
+
+      <span class="lbl t"
+        data-en="UI/UX Design">
+        UI/UX Design
+      </span>
+
+      <p class="t"
+        data-en="I worked as a UI/UX Designer. I created wireframes and mockups in Figma, paying attention to how the information is organized and what users need.">
+        Aku berperan sebagai UI/UX Designer, membuat wireframe dan mockup di Figma dengan memperhatikan kebutuhan pengguna.
+      </p>
+      
+      <a href="https://kota-semarangku-website.vercel.app/"
+         class="link"
+         target="_blank"
+         rel="noopener">
+
+        <span class="t" data-en="View Project">
+          Lihat Proyek
+        </span> →
+
+      </a>
+
+    </div>
+
+
+    <!-- PROJECT 2 -->
+    <div class="card">
+
+      <h3 class="t" data-en="Personal Branding Portfolio">
+        Personal Branding Portfolio
+      </h3>
+
+      <img src="../images/project-02.png" alt="WEB STATIS">
+
+      <span class="lbl t"
+        data-en="Personal Branding Portfolio">
+        WEB STATIS 
+      </span>
+
+      <p class="t"
+        data-en="I was part of the Design &amp; IoT team. I helped develop the IoT system, mainly using sensors to detect smoke, control lights, and measure distance. I also worked with my team to combine design and technology into a Smart Home prototype.">
+        Website portfolio pribadi untuk menampilkan profil, kemampuan, pengalaman, dan berbagai karya yang telah dibuat.
+      </p>
+
+      <a href="https://madebynaraa.pages.dev/"
+         class="link"
+         target="_blank"
+         rel="noopener">
+
+        <span class="t" data-en="View Project">
+          Lihat Proyek
+        </span> →
+
+      </a>
+
+    </div>
+
+
+    <!-- PROJECT 3 -->
+    <div class="card">
+
+      <h3 class="t" data-en="KIK Dinara">
+        KIK Dinara
+      </h3>
+
+      <img src="../images/project-03.png" alt="KIK Dinara">
+
+      <span class="lbl">
+        Web Design · Google Sites
+      </span>
+
+      <p class="t"
+        data-en="A Google Sites website to record my personal achievements and evaluate my targets.">
+        Website di Google Sites untuk mencatat pencapaian dan evaluasi target pribadiku.
+      </p>
+
+      <a href="https://sites.google.com/view/kik-dinara-12/evaluasi-target"
+         class="link"
+         target="_blank"
+         rel="noopener">
+
+        <span class="t" data-en="View Project">
+          Lihat Proyek
+        </span> →
+
+      </a>
+
+    </div>
+
+
+    <!-- PROJECT 4 -->
+    <div class="card project-card" data-image="../images/project-04.png" tabindex="0" role="button">
+
+      <h3 class="t" data-en="Nara Corner">
+        Nara Corner
+      </h3>
+
+      <img src="../images/project-04.png" alt="Nara Corner">
+
+      <span class="lbl">
+        Branding · Social Media
+      </span>
+
+      <p class="t"
+        data-en="A social media account for sharing creative and inspiring content. I handle the branding and create the visual content.">
+        Akun media sosial untuk berbagi konten kreatif dan inspiratif. Aku mengurus branding dan pembuatan konten visualnya.
+      </p>
+
+      <span class="link"><span class="t" data-en="View Project">Lihat Proyek</span> →</span>
+
+    </div>
+
+    <!-- PROJECT 5 -->
+    <div class="card project-card" data-image="../images/project-06.jpg" tabindex="0" role="button">
+      <h3>Canva Design 01</h3>
+      <img src="../images/project-06.jpg" alt="Project 06">
+      <span class="lbl">Poster Design</span>
+      <p class="t" data-en="Poster design work used to communicate a message in a simple but visually appealing way.">Karya desain poster untuk menyampaikan pesan dengan cara yang sederhana namun tetap menarik secara visual.</p>
+      <span class="link"><span class="t" data-en="View Project">Lihat Proyek</span> →</span>
+    </div>
+
+    <!-- PROJECT 6 -->
+    <div class="card project-card" data-image="../images/project-07.jpg" tabindex="0" role="button">
+      <h3>Project 07</h3>
+      <img src="../images/project-07.jpg" alt="Project 07">
+      <span class="lbl">Branding</span>
+      <p class="t" data-en="A branding concept project focusing on composition, visual style, and creative identity.">Proyek konsep branding yang berfokus pada komposisi, gaya visual, dan identitas kreatif.</p>
+      <span class="link"><span class="t" data-en="View Project">Lihat Proyek</span> →</span>
+    </div>
+
+    <!-- PROJECT 7 -->
+    <div class="card project-card" data-image="../images/project-08.jpg" tabindex="0" role="button">
+      <h3>Project 08</h3>
+      <img src="../images/project-08.jpg" alt="Project 08">
+      <span class="lbl">Photo Story</span>
+      <p class="t" data-en="Photo-based storytelling work that combines visual arrangement with an emotional message.">Karya visual berbasis foto yang menggabungkan susunan gambar dengan pesan emosional.</p>
+      <span class="link"><span class="t" data-en="View Project">Lihat Proyek</span> →</span>
+    </div>
+
+    <!-- PROJECT 8 -->
+    <div class="card project-card" data-image="../images/project-09.png" tabindex="0" role="button">
+      <h3>Project 09</h3>
+      <img src="../images/project-09.png" alt="Project 09">
+      <span class="lbl">Social Media</span>
+      <p class="t" data-en="A social media visual project that presents content in a vibrant and appealing way.">Proyek visual media sosial yang menampilkan konten dengan gaya yang cerah dan menarik.</p>
+      <span class="link"><span class="t" data-en="View Project">Lihat Proyek</span> →</span>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contact">
+  <span class="tag">Contact</span>
+  <h2 class="t" data-en="Let's get in touch">Yuk, terhubung</h2>
+  <p class="t" data-en="Want to chat or work together? Reach me through any of these.">Mau ngobrol atau kerja sama? Hubungi aku lewat salah satu ini.</p>
+  <div class="btns">
+    <a class="btn p" href="https://wa.me/6287716634944" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn" href="mailto:dinaraaninditarahmandani68@gmail.com">Email</a>
+    <a class="btn" href="https://www.instagram.com/dxnrt_/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <p style="margin-top:22px;font-size:.85rem">📍 Semarang, Jawa Tengah</p>
+</section>
+
+<footer>© 2026 Dinara Anindita Rahmandani · <em>"Keep growing and creating."</em></footer>
+
+<!-- Image Modal -->
+<div id="imgModal" class="img-modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <img id="modalImg" src="" alt="Certificate/Project Image" />
+  </div>
+</div>
+
+<!-- Hover Preview -->
+<div id="hoverPreview" class="hover-preview">
+  <img src="" alt="Preview" />
+</div>
+
+<script>
+const T=document.querySelectorAll('.t');
+T.forEach(e=>e._id=e.innerHTML);
+const btn=document.getElementById('lang');
+function setLang(l){
+  T.forEach(e=>e.innerHTML=l==='en'?e.dataset.en:e._id);
+  document.documentElement.lang=l;
+  btn.textContent=l==='en'?'EN | ID':'ID | EN';
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+btn.onclick=()=>setLang(document.documentElement.lang==='en'?'id':'en');
+try{if(localStorage.getItem('lang')==='en')setLang('en')}catch(e){}
+
+const io=new IntersectionObserver(es=>es.forEach(x=>{
+  if(x.isIntersecting){
+    x.target.classList.add('on');
+    x.target.querySelectorAll('[data-w]').forEach(b=>b.style.width=b.dataset.w+'%');
+  }
+}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+
+const links=[...document.querySelectorAll('.ni')];
+const spy=new IntersectionObserver(es=>es.forEach(x=>{
+  if(x.isIntersecting){
+    links.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+x.target.id));
+  }
+}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section').forEach(s=>spy.observe(s));
+
+// Certificate Image Modal
+const modal=document.getElementById('imgModal');
+const modalImg=document.getElementById('modalImg');
+const closeModal=document.querySelector('.close-modal');
+const certCards=document.querySelectorAll('.cert-card');
+
+certCards.forEach(card=>{
+  card.addEventListener('click',()=>{
+    const imgSrc=card.dataset.image;
+    if(imgSrc){
+      modalImg.src=imgSrc;
+      modal.classList.add('show');
+      document.body.style.overflow='hidden';
+    }
+  });
+  card.addEventListener('keydown',(e)=>{
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      card.click();
+    }
+  });
+});
+
+closeModal.addEventListener('click',()=>{
+  modal.classList.remove('show');
+  document.body.style.overflow='auto';
+});
+
+modal.addEventListener('click',(e)=>{
+  if(e.target===modal){
+    modal.classList.remove('show');
+    document.body.style.overflow='auto';
+  }
+});
+
+// Project preview only opens on click
+const projectCards=document.querySelectorAll('.project-card');
+
+projectCards.forEach(card=>{
+  card.tabIndex=0;
+
+  const openProjectImage=()=>{
+    const img=card.querySelector('img');
+    const imgSrc=card.dataset.image || img?.src;
+    if(imgSrc){
+      modalImg.src=imgSrc;
+      modal.classList.add('show');
+      document.body.style.overflow='hidden';
+    }
+  };
+
+  card.addEventListener('click',(e)=>{
+    if(e.target.closest('a')) return;
+    openProjectImage();
+  });
+
+  card.addEventListener('keydown',(e)=>{
+    if(e.key==='Enter' || e.key===' '){
+      e.preventDefault();
+      openProjectImage();
+    }
+  });
+});
+</script>
+</body>
+</html>
